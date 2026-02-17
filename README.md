@@ -1,14 +1,89 @@
-# RAG Application (Gemini)
+# 🚀 RAG Application (Gemini)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/isurulkh/rag-application-gemini/main/app.py)
+## ✨ Overview
 
-## Description
+**RAG Application (Gemini)** is an interactive Streamlit-based web app that allows users to upload PDFs and ask questions directly from the document.
 
-The RAG Application (Gemini) is a Streamlit web application designed to question answering system that retrieves information from uploaded PDFs using Google Generative AI and LangChain. Ask questions about the document's content and get detailed, context-aware answers.
+It uses **Retrieval-Augmented Generation (RAG)** powered by **Google Gemini**, **LangChain**, and **FAISS** to generate accurate, context-aware answers strictly from the uploaded document.
 
-## Technologies Used
+💡 If the answer is not present in the PDF, the model clearly responds:
 
-- **Streamlit:** The web framework used for building the interactive user interface.
-- **Google Generative AI (Gemini):** A powerful language model used for natural language understanding and question answering. You can learn more about Gemini [here](https://deepmind.google/technologies/gemini/#introduction).
-- **LangChain:** A library for building language-based applications, used for creating custom prompts and managing text data.
+> "Answer not available in the provided PDF."
 
+---
+
+## 🎯 Features
+
+- 📂 Upload any PDF document
+- ✂️ Automatic text chunking
+- 🧠 HuggingFace Embeddings (`all-MiniLM-L6-v2`)
+- 🔎 FAISS Vector Database
+- 🤖 Gemini 2.5 Flash LLM
+- 📚 Context-based answering only
+- ❌ Proper fallback response when answer not found
+
+---
+
+## 🧰 Technologies Used
+
+- **Python**
+- **Streamlit**
+- **LangChain**
+- **FAISS**
+- **HuggingFace Sentence Transformers**
+- **Google Gemini API**
+- **PyPDF2**
+
+---
+
+# ⚙️ Setup Instructions
+
+Follow the steps below to run the project locally.
+
+---
+
+## 1 Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
+cd YOUR_REPOSITORY_NAME
+```
+## 2 Install Requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+## 3 Add Gemini API Key
+
+```bash
+GOOGLE_API_KEY=your_gemini_api_key_here
+```
+
+## 4 Run the Application
+
+```bash
+streamlit run app.py
+```
+
+
+## 🧠 How It Works (RAG Flow)
+
+Here’s what happens internally:
+
+1️⃣ User uploads a PDF
+2️⃣ Text is extracted using PyPDF2
+3️⃣ Text is split into chunks
+4️⃣ Embeddings are generated using HuggingFace
+5️⃣ FAISS stores vector embeddings
+6️⃣ User asks a question
+7️⃣ Relevant chunks are retrieved
+8️⃣ Gemini generates an answer using ONLY the retrieved context
+```
+
+
+
+
+Author
+
+Lucky Tiwari
