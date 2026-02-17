@@ -79,11 +79,10 @@ Here’s what happens internally:
 6️⃣ User asks a question
 7️⃣ Relevant chunks are retrieved
 8️⃣ Gemini generates an answer using ONLY the retrieved context
-```
+
 
 
 
 
 Author
-
-Lucky Tiwari
+Lucky
